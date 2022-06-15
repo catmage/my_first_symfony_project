@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+<article>
+<form method="post">
+ 
+<br><br><br>
+    <h1 class="text-center">Connexion</h1>
+    <br>
+    <div class= "col-md-4 mx-auto">
+    <label for="inputEmail">Email</label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+    <br>
+    
+    <label for="inputPassword">Mot de passe</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+<br>
+<br>
+    <button class="btn btn-submit " type="submit">
+        Valider
+    </button>
+    </div>
+    <br><br><br>
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-7">
+            Vous êtes connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+        </div>
+    {% endif %}
+    <br><br><br><br>
+    
+    <img class="img-fluid partenaires_inscription" src="Charte/BODY/ESPACE CLIENT/bas de page pictos.png" alt="">
+                        <br>
+                        <br>
+</form>
+</article>
+{% endblock %}

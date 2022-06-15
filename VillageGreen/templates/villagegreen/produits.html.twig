@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+
+{% block body %}
+<br>
+<br>
+<br>
+<section class="articles row g-3">
+
+    {% for product in products %}
+
+    
+    
+    <br>
+        <div class=" card card-fluid col-5 rounded-3 border-5 article-produits">
+        <img src=" {{ asset('uploads/picture/' ~ product.picture) }}" class="card-img-top img-fluid img_produits" alt="">
+            <div class="card-body">
+                <h2 class="card-title">{{ product.name }}</h2>
+                    
+                <p class="card-text">{{ product.shortwording | raw }}</p>
+                <h3 class="card-text prix">{{product.price}}€</h3>
+                <a href="{{ path('show', {'id' : product.id}) }}" class="btn btn-submit">Lire la suite</a>
+            </div>
+        </div>
+        
+      
+    {% endfor %}
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+</section>
+{% endblock %}

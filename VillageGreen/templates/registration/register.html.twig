@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+
+{% block body %}
+<article>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form method="POST" action="#">
+            <h1 class="text-center">Créer vos identifiants</h1>
+                <br>
+                <br>
+                {{ form_start(registrationForm) }}
+                    <div class="container form-group row">
+                        <div class="col-md-4 offset-md-2 ">
+                            {{ form_row(registrationForm.email, {'label':'Email', 'id':'email', 'attr':{'class':'form-control'}}) }}
+                            <span id="missEmail"></span>
+                            {{ form_row(registrationForm.plainPassword.first, { 'label': 'Mot de passe', 'id':'motdepasse', 'attr':{'class':'form-control'}}) }}
+                            <span id="missPassword"></span>
+                        </div>
+                        <div class="col-md-4 offset-md-1 ">
+                            {{form_row(registrationForm.plainPassword.second, { 'attr':{'class':'form-control confirmation_motdepasse'}}) }}
+                            <label class="mdp confi_mdp" for="mdp">Confirmation de mot de passe</label>
+                                           {# <input type="text" class="form-control" id="motdepasse" placeholder="" required>  #}
+                        </div>
+                            <span class="col-md-4 offset-md-2 " id="missMotdepasse"></span>
+                                
+                              <br>
+                              <br>
+                              <br>
+                              <br>
+                              <br>
+                              <h1 class="text-center">Créer vos identifiants</h1>
+                              <br>
+                              <br>
+                              <br>
+                              <br>
+                        <div class="col-md-4 container-fluid"><div class="form-group float-left inscription">
+                            {{ form_row(registrationForm.firstname, {'label':'Prenom', 'id':'prenom', 'attr':{'placeholder':'Prenom', 'class':'form-control'}}) }}
+                            <span id="missPrenom"></span>
+                            {{ form_row(registrationForm.lastname, {'label':'Nom', 'id':'nom', 'attr':{'class':'form-control'}}) }}
+                            <span id="missNom"></span>
+                            {{ form_row(registrationForm.address, {'label': 'Adresse', 'id':'adresse',  'attr':{'class':'form-control'}}) }}
+                            <span id="missAdresse"></span>
+                            {{ form_row(registrationForm.city, {'label': 'Ville', 'id':'ville', 'attr':{'class':'form-control'}}) }}
+                            <span id="missVille"></span>
+                            {{ form_row(registrationForm.zipcode, {'label': 'Code postal', 'id':'codepostal', 'attr':{'class':'form-control'}}) }}
+                            <span id="missCodepostal"></span>
+                            {{ form_row(registrationForm.country, {'label': 'Pays', 'id':'pays', 'attr':{'class':'form-control'}}) }}
+                            <span id="missPays"></span>
+                            {{ form_row(registrationForm.phone, {'label': 'Numero de telephone', 'id':'telephone', 'attr':{'class':'form-control'} })}}
+                            <span id="missTelephone"></span>
+                            <br>
+                            {{ form_row(registrationForm.agreeTerms, {'label':'J\'accepte les conditions', 'id':'checkbox', 'attr':{'class': 'form-check-input'} }) }}
+                            <span id="missCheckbox"></span>
+                            <br>
+                            <button type="submit" class="btn btn-submit" id="boutonenvoi">Valider</button>
+                            {{ form_end(registrationForm) }}
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                    <div class="col-md-5 d-none d-xl-block d-flex">
+                        <img class="rounded float-right img_telephone" src="Charte/BODY/ESPACE CLIENT/CADRE numero.png" alt="" >
+                    </div>
+                    <br><br><br><br><br><br><br>
+                 <img class="img-fluid partenaires_inscription" src="Charte/BODY/ESPACE CLIENT/bas de page pictos.png" alt="">
+                        <br>
+                        <br>
+                        
+        {# </div> #}
+        
+    </form>
+</article>
+{% block javascripts %}
+{% endblock %}
+{% endblock %}
+
+

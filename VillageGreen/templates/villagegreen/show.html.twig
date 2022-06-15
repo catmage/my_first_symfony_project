@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produits{% endblock %}
+ {% block stylesheets %}
+            
+        {% endblock %} 
+{% block body %}
+<br>
+<br>
+<section class="articles row">
+<div class="card card-fluid  rounded-3 border-5">
+
+
+    
+    
+    <br>
+        
+            <h2>{{ product.name }} {{product.brand}}</h2>
+            
+            <div class="content">
+                <img src=" {{ asset('uploads/picture/' ~ product.picture) }}" class="img-fluid img_produits" alt="">
+                <div class="">
+                
+                <h3 class="">{{product.price}}€</h3>
+                <br>
+                <h4 class="">Description:</h4>
+                
+                <p class="">{{ product.longwording }}</p>
+                <br>
+                <a href=""class="btn btn-submit">Ajouter au panier</a>
+                <br>
+                <br>
+            </div>
+        
+ </div>
+  </section>      
+ 
+  
+        <br>
+        
+
+{% endblock %}
